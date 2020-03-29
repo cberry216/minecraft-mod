@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="modlist">
+{% for mod in mods %}
+  <div class="mod">
+    <div class="mod__top">
+      <a href="{{mod.link}}" class="mod__link" target="_blank">{{mod.title}}</a>
+    </div>
+    <a href="{{mod.get_absolute_url}}" class="mod__change">Edit</a>
+    <div class="mod__bottom">
+      <p class="mod__description">{{mod.description}}</p>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endblock content %}
